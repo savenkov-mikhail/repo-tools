@@ -31,9 +31,18 @@ public class SpringBootStarter {
         List<Employee> allEmployees = employeeDao.getAllEmployees();
         StringBuilder output = new StringBuilder("Employee list:\n");
 
+        // TODO: add something here
+        
         for (Employee emp: allEmployees) {
             output.append(emp.toString());
         }
         return output.toString();
+    }
+    
+    @GetMapping("/getAllEmployees")
+    public List<Employee> getAllEmployees() {
+        List<Employee> allEmployees = employeeDao.getAllEmployees();
+        
+        return allEmployees;
     }
 }
